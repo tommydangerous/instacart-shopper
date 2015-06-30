@@ -1,0 +1,41 @@
+.home-index section.how {
+  .rows {
+    .row {
+      @include outer-container;
+      .column {
+        padding: 0 $spacing;
+        @include screen-except-lg {
+          @include span-columns(12);
+        }
+        @include screen-lg {
+          @include span-columns(6);
+        }
+        &.image {
+          text-align: center;
+          @include screen-except-lg {
+            margin-bottom: $spacing * 2;
+          }
+        }
+        &.text {
+          .row-header {
+            @include screen-lg {
+              text-align: left;
+            }
+          }
+          .row-body {
+            margin-top: $spacing;
+            @include screen-except-lg {
+              text-align: center;
+            }
+          }
+          .row-steps {
+            margin-top: $spacing * 2;
+            h4 {
+              font-weight: $font-weight-normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}

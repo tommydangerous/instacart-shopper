@@ -1,0 +1,30 @@
+.form__errors {
+  @include border-radius;
+  background-color: $red;
+  padding: $spacing * 0.5;
+  margin-bottom: $spacing * 0.5;
+  p {
+    color: $white;
+    text-align: center;
+  }
+}
+.form__field {
+  margin-bottom: $spacing;
+  p {
+    margin-bottom: $spacing * 0.25;
+  }
+}
+.form__field--medium {
+  @extend .form__field;
+  margin-bottom: $spacing * 2;
+}
+.form__field__text {
+  @extend .form__field;
+  margin-bottom: $spacing * 0.5;
+}
+.form__field__text--medium {
+  @extend .form__field__text;
+  p {
+    font-size: $font-size-medium-1;
+  }
+}

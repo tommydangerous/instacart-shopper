@@ -1,0 +1,76 @@
+$hero__background__content__image-height: $spacing * 5;
+
+.hero__background {
+  position: relative;
+  width: 100%;
+  .hero__background__tint, .hero__background__image {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  .hero__background__tint {
+    background-color: $black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .hero__background__image {
+    @include background-image-default;
+    z-index: 0;
+  }
+  .hero__background__content {
+    @include outer-container;
+    @include screen-xs {
+      padding: $spacing * 5 0;
+    }
+    @include screen-sm {
+      padding: $spacing * 5 0;
+    }
+    @include screen-md-min {
+      padding: $spacing * 10 0;
+    }
+    position: relative;
+    z-index: 2;
+    .row {
+      @include span-columns(12);
+      padding: 0 $spacing;
+    }
+    .hero__background__content__image {
+      height: $hero__background__content__image-height;
+      margin: 0 auto;
+      margin-bottom: $spacing * 2;
+      width: $hero__background__content__image-height;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .hero__background__content__text {
+      margin: 0 auto;
+      max-width: $spacing * 40;
+      h1 {
+        color: $white;
+        font-weight: $font-weight-normal;
+        margin-bottom: $spacing * 3;
+        text-align: center;
+      }
+    }
+    .hero__background__content__actions {
+      a {
+        @include border-radius;
+        background-color: $blue;
+        color: $white;
+        display: block;
+        font-size: $font-size-medium-1;
+        line-height: $spacing;
+        margin: 0 auto;
+        padding: $spacing;
+        text-align: center;
+        width: $spacing * 12.5;
+        &:hover {
+          background-color: $blue-hover;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

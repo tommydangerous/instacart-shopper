@@ -1,0 +1,45 @@
+$form__header__image-size: $spacing * 3;
+
+.form--padding {
+  padding: $spacing;
+}
+.form--center {
+  margin: $spacing * 5 auto ;
+  max-width: $spacing * 26;
+  padding: 0 $spacing * 2;
+  .form__header {
+    @include border-top-left-radius;
+    @include border-top-right-radius;
+    background-color: $blue;
+    padding: $spacing 0;
+    .form__header__image {
+      height: $form__header__image-size;
+      margin: 0 auto;
+      width: $form__header__image-size;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .form__content {
+    @include border-bottom-left-radius;
+    @include border-bottom-right-radius;
+    background-color: $white;
+    padding: $spacing * 2;
+    padding-top: $spacing;
+    h1 {
+      font-size: $font-size-medium-1;
+      text-align: center;
+      margin-bottom: $spacing;
+    }
+  }
+  .form__footer {
+    margin-top: $spacing;
+    p {
+      color: $white;
+      font-size: $font-size-small-2;
+      text-align: center;
+    }
+  }
+}

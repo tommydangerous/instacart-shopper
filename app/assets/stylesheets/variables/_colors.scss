@@ -1,0 +1,43 @@
+$black: rgb(0, 0, 0);
+
+$blue: rgb(119, 158, 203); // HSL: 212° 45% 63%
+$blue-hover: hsl(212, 45, 53);
+$blue-dark: hsl(212, 45, 43);
+
+$gray-dark-1: rgb(40, 40, 40);
+$gray-dark-2: rgb(60, 60, 60);
+$gray-dark-3: rgb(80, 80, 80);
+$gray-medium-1: rgb(110, 110, 110);
+$gray-medium-2: rgb(130, 130, 130);
+$gray-medium-3: rgb(150, 150, 150);
+$gray-light-1: rgb(180, 180, 180);
+$gray-light-2: rgb(200, 200, 200); // HSL: 0° 0% 78%
+$gray-light-2-hover: hsl(0, 0, 68);
+$gray-light-3: rgb(220, 220, 220);
+$gray: rgb(207, 207, 196);
+
+// $green: rgb(119, 190, 119);
+$green: rgb(119, 221, 119); // HSL: 120° 60% 67%
+$green-hover: hsl(120, 60, 57);
+$green-dark: rgb(3, 192, 60);
+// $green-hover: rgb(109, 180, 109);
+
+$orange: rgb(255, 179, 71);
+
+$red: rgb(255, 105, 97);
+$red-dark: rgb(194, 59, 34);
+
+$white: rgb(255, 255, 255);
+
+$background-color: $white;
+$text-color: $gray-dark-1;
+
+.gray-medium-1 {
+  color: $gray-medium-1;
+}
+.green {
+  color: $green;
+}
+.green-dark {
+  color: $green-dark;
+}

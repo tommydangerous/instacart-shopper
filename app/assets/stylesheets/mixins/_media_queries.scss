@@ -1,0 +1,39 @@
+@mixin screen-xs {
+  @include media(min-width $min-width-extra-small max-width $min-width-small) {
+    @content;
+  }
+}
+@mixin screen-sm {
+  @include media(min-width $min-width-small max-width $min-width-medium) {
+    @content;
+  }
+}
+@mixin screen-sm-min {
+  @include media($min-width-small) {
+    @content;
+  }
+}
+@mixin screen-md {
+  @include media(min-width $min-width-medium max-width $min-width-large) {
+    @content;
+  }
+}
+@mixin screen-md-min {
+  @include media($min-width-medium) {
+    @content;
+  }
+}
+@mixin screen-lg {
+  @include media($min-width-large) {
+    @content;
+  }
+}
+
+@mixin screen-except-lg {
+  @include media(max-width $min-width-large) {
+    @content;
+  }
+}
+
+// Additional styles below this line
+//------------------------------------------------------------------------------

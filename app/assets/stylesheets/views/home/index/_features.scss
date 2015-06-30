@@ -1,0 +1,56 @@
+.home-index .features {
+  background-color: rgb(245, 245, 245);
+  .rows {
+    @include outer-container;
+    padding-left: $spacing;
+    padding-right: $spacing;
+  }
+  .row {
+    @include outer-container;
+    .column {
+      @include screen-xs {
+        @include span-columns(12);
+      }
+      @include screen-sm {
+        @include span-columns(12);
+      }
+      @include screen-md {
+        @include span-columns(12);
+      }
+      @include screen-lg {
+        @include span-columns(4);
+      }
+      margin-top: $spacing * 2;
+      &.image {
+        @include screen-lg {
+          margin-bottom: 0 !important;
+          margin-top: $spacing * 2 !important;
+        }
+        margin-bottom: $spacing;
+        margin-top: $spacing * 3;
+        text-align: center;
+      }
+      .feature {
+        &:first-child {
+          @include screen-lg {
+            margin-top: $spacing !important;
+          }
+          margin-top: 0;
+        }
+        margin-top: $spacing * 2;
+        text-align: center;
+        i {
+          color: $blue;
+          font-size: $spacing * 3;
+          margin-bottom: $spacing;
+        }
+        h4 {
+          font-weight: $font-weight-medium;
+        }
+        p {
+          color: $gray-medium-1;
+        }
+      }
+    }
+  }
+}

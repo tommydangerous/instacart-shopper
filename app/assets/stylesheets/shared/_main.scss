@@ -1,0 +1,85 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $background-color;
+  font-weight: $font-weight-normal;
+  overflow-x: hidden;
+  .wrapper {
+    bottom: 100%;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    top: 0;
+    z-index: 0;
+    .content  {
+      color: $text-color;
+      padding-bottom: $footer-height;
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    color: $blue-hover;
+  }
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+h1 {
+  font-size: $font-size-large-2;
+  line-height: $font-size-large-2 * 1.5;
+}
+h2 {
+  font-size: $font-size-large-1;
+  line-height: $font-size-large-1 * 1.5;
+}
+h3 {
+  font-size: $font-size-medium-2;
+  line-height: $font-size-medium-2 * 1.5;
+}
+h4 {
+  font-size: $font-size-medium-1;
+  line-height: $font-size-medium-1 * 1.5;
+}
+
+p {
+  font-size: $font-size-normal-1;
+  line-height: $font-size-normal-1 * 1.5;
+  margin: 0;
+}
+
+ol, ul {
+  margin: 0;
+  padding-left: $spacing * 1.25;
+}
+
+.clear {
+  clear: both;
+  font-size: 1px;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// Additional styles below this line
+//------------------------------------------------------------------------------
+body {
+  @include didact-gothic;
+  -webkit-font-smoothing: antialiased;
+}

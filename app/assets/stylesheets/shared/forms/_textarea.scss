@@ -1,0 +1,14 @@
+@import "input";
+
+.form__textarea {
+  @extend .form__input;
+  resize: none;
+}
+.form__textarea--medium {
+  @extend .form__input--medium;
+  @extend .form__textarea;
+}
+.form__textarea--width {
+  @extend .form__input--width;
+  @extend .form__textarea;
+}

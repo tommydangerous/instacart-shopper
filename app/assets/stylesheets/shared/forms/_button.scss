@@ -1,0 +1,63 @@
+.form__button {
+  @include border-radius;
+  @include browser(appearance, none);
+  @include didact-gothic;
+  @include transition;
+  background-color: $green;
+  border: none;
+  border-color: $green-dark;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 2px;
+  border-style: solid;
+  color: $white;
+  font-size: $font-size-normal-1;
+  padding: $spacing * 0.5 $spacing;
+  &:active, &:focus {
+    outline: none;
+  }
+  &:active {
+    border-color: $green-hover;
+  }
+  &:hover {
+    background-color: $green-hover;
+    color: $white;
+    cursor: pointer;
+    text-decoration: none !important;
+  }
+}
+a.form__button {
+  display: inline-block;
+}
+.form__button--gray {
+  @extend .form__button;
+  background-color: $gray-light-2;
+  border-color: $gray-medium-2;
+  &:active {
+    border-color: $gray-light-2-hover;
+  }
+  &:hover {
+    background-color: $gray-light-2-hover;
+  }
+}
+.form__button--blue {
+  @extend .form__button;
+  background-color: $blue;
+  border-color: $blue-dark;
+  &:active {
+    border-color: $blue-hover;
+  }
+  &:hover {
+    background-color: $blue-hover;
+  }
+}
+.form__button--medium {
+  @extend .form__button;
+  font-size: $font-size-medium-1;
+  padding: $spacing * 0.75 $spacing * 2;
+}
+.form__button--width {
+  @extend .form__button;
+  width: 100%;
+}
