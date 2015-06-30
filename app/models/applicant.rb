@@ -55,6 +55,6 @@ class Applicant < ActiveRecord::Base
   private
 
   def initial_workflow_state
-    self.workflow_state = WORKFLOW_STATES.first
+    self.workflow_state = WORKFLOW_STATES.first unless workflow_state
   end
 end

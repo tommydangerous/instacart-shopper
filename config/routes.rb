@@ -14,6 +14,5 @@ Rails.application.routes.draw do
       get :confirmation
     end
   end
-
-  # resources :funnels, only: [:index]
+  resources :funnels, only: %i(index)
 end

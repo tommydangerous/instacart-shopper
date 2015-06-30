@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module ApplicantChallenge
   class Application < Rails::Application
+    %i(lib).each do |path|
+      autoload_path = [config.root, path].join "/"
+      config.autoload_paths << autoload_path
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

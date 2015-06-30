@@ -1,6 +1,6 @@
 class FunnelsController < ApplicationController
   def index
-    @funnel = {} # your code goes here
+    @funnel = funnel_serializer.serialize
 
     respond_to do |format|
       format.html { @chart_funnel = formatted_funnel }
@@ -10,8 +10,12 @@ class FunnelsController < ApplicationController
 
   private
 
-  # generates a formatted version of the funnel for display in d3
+  def end_date
+    end_date = params[:end_date].try(:to_date) || Date.today
+  end
+
   def formatted_funnel
+    # generates a formatted version of the funnel for display in d3
     formatted = Hash.new { |h, k| h[k] = [] }
 
     @funnel.each do |date, state_counts|
@@ -26,5 +30,13 @@ class FunnelsController < ApplicationController
         values: v
       }
     end
+  end
+
+  def funnel_serializer
+    @funnel_serializer ||= FunnelsSerializer.new(start_date, end_date)
+  end
+
+  def start_date
+    params[:start_date].try(:to_date) || Date.today
   end
 end
