@@ -43,6 +43,9 @@ $form__header__image-size: $spacing * 3;
       margin-bottom: $spacing;
     }
   }
+  .form__content__text {
+    margin-bottom: $spacing * 2;
+  }
   .form__footer {
     margin-top: $spacing;
     p {

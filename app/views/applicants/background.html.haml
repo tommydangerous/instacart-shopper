@@ -1,0 +1,27 @@
+= content_for :page_title, "Background Check"
+
+= content_for :form_content do
+  %h1
+    Instacart Background Check
+  .form__content__text
+    %p
+      I hereby authorize Instacart to investigate my background and
+      qualifications for purposes of evaluating whether I am qualified for the
+      position for which I am applying.
+    %br
+    %p
+      I understand that Instacart will utilize an outside firm or firms to
+      assist it in checking such information, and I specifically authorize such
+      an investigation by information services and outside entities of the
+      company's choice.
+    %br
+    %p
+      I also understand that I may withhold my permission and that in such a
+      case, no investigation will be done, and my application for employment
+      will not be processed further.
+  = form_tag background_authorize_applicants_path do
+    .form__field
+      = button_tag "Authorize",
+        class: "form__button--medium form__button--width"
+
+= render "shared/forms/center"

@@ -21,6 +21,7 @@ class Applicant < ActiveRecord::Base
   ].freeze
   WORKFLOW_STATES = %w(
     applied
+    background_check_authorized
     quiz_started
     quiz_completed
     onboarding_requested
@@ -29,15 +30,25 @@ class Applicant < ActiveRecord::Base
     rejected
   ).freeze
 
-  validates :email, presence: true, uniqueness: true
+
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :phone, presence: true, uniqueness: true
   validates :phone_type, presence: true
   validates :region, presence: true
   validates :workflow_state, presence: true
 
   before_validation :initial_workflow_state, on: :create
+
+  def update_next_workflow_state
+    current_index = WORKFLOW_STATES.index workflow_state
+    if current_index == WORKFLOW_STATES.size - 1
+      return
+    end
+    index = current_index ? current_index + 1 : 0
+    update workflow_state: WORKFLOW_STATES[index]
+  end
 
   private
 
