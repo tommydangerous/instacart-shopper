@@ -10,7 +10,7 @@
   = content_tag :body, class: body_class do
     .wrapper
       / = render "header"
-      / = render "flash"
+      = render "flash"
       .content
         = yield
     = render "footer"

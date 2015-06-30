@@ -1,0 +1,27 @@
+= content_for :page_title, "Login"
+
+= content_for :form_content do
+  %h1
+    Login to View Your Application
+  = form_tag login_path do
+    .form__field
+      %p
+        Email
+      = text_field_tag :email, @email, autocomplete: "off",
+        class: "form__input--medium form__input--width",
+        placeholder: "john@gmail.com", type: "email"
+    .form__field
+      %p
+        Phone
+      = text_field_tag :phone, @phone, autocomplete: "off",
+        class: "form__input--medium form__input--width",
+        placeholder: "408-143-1337"
+    = button_tag "Login", class: "form__button--medium form__button--width"
+
+= content_for :form_footer do
+  %p
+    Haven't applied yet?
+    = link_to "Apply now", new_applicant_path
+
+= render "shared/forms/center"
+

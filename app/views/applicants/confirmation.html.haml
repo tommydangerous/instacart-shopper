@@ -1,0 +1,14 @@
+= content_for :page_title, "Application Received"
+
+= content_for :form_content do
+  %h1
+    Thank You for Applying
+  .form__content__text
+    %p
+      Your application has been received.
+      We will get back to you as soon as possible.
+      In the meantime, you can view your current application and/or edit it.
+  = link_to "View Application", edit_applicant_path(current_applicant),
+    class: "form__button--medium form__button--width"
+
+= render "shared/forms/center"

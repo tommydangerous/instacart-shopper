@@ -1,9 +1,6 @@
 class ApplicantsController < ApplicationController
-  include Sessionable
-
   before_action :require_login,
-                only: %i(background background_authorize confirmation)
-  before_action :require_logout, only: %i(create new)
+                only: %i(background background_authorize confirmation edit)
   before_action :check_background_authorization,
                 only: %i(background background_authorize)
 
@@ -12,6 +9,7 @@ class ApplicantsController < ApplicationController
 
   def background_authorize
     current_applicant.update_next_workflow_state
+    redirect_to confirmation_applicants_path
   end
 
   def confirmation
@@ -28,15 +26,31 @@ class ApplicantsController < ApplicationController
     end
   end
 
+  def edit
+    @applicant = current_applicant
+  end
+
   def new
     @applicant = Applicant.new
+  end
+
+  def update
+    @applicant = current_applicant
+    if @applicant.update permitted
+      log_in @applicant
+      flash[:success] = "Update successful"
+      redirect_to edit_applicant_path(current_applicant)
+    else
+      @errors = stringify_single_error @applicant.errors
+      render "edit"
+    end
   end
 
   private
 
   def check_background_authorization
     if current_applicant.workflow_state == "background_check_authorized"
-      redirect_to root_path
+      redirect_to confirmation_applicants_path
     end
   end
 

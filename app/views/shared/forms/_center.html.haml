@@ -15,3 +15,6 @@
         = image_tag "logo.png"
   .form__content
     = yield :form_content
+  - if content_for? :form_footer
+    .form__footer
+      = yield :form_footer

@@ -1,0 +1,9 @@
+= content_for :page_title, "Edit Application"
+= content_for :form_button, "Update"
+= content_for :form_content_header, "Your Current Application"
+= content_for :form_footer do
+  %p
+    All finished?
+    = link_to "Logout", logout_path, method: :post
+
+= render "applicants/shared/form"

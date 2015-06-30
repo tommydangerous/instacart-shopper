@@ -1,0 +1,7 @@
+- if flash.present?
+  - flash.each do |key, value|
+    .flash{ class: "flash--#{key}" }
+      = link_to "#", class: "flash__close" do
+        %i.fa.fa-times
+      %p
+        = value

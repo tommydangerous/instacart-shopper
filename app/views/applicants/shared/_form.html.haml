@@ -1,0 +1,52 @@
+= content_for :form_content do
+  %h1
+    = content_for :form_content_header
+  = form_for @applicant do |f|
+    .form__fields
+      .form__field__column
+        %p
+          First name
+        = f.text_field :first_name, autocomplete: "off",
+          class: "form__input--medium form__input--width",
+          placeholder: "John"
+      .form__field__column
+        %p
+          Last name
+        = f.text_field :last_name, autocomplete: "off",
+          class: "form__input--medium form__input--width",
+          placeholder: "Doe"
+    .form__field
+      %p
+        Email
+      = f.text_field :email, autocomplete: "off",
+        class: "form__input--medium form__input--width",
+        placeholder: "john@gmail.com", type: "email"
+    .form__field
+      %p
+        Phone
+      = f.text_field :phone, autocomplete: "off",
+        class: "form__input--medium form__input--width",
+        placeholder: "408-143-1337"
+    .form__fields
+      .form__field__column
+        %p
+          Choose your phone type
+        .form__select__field
+          %i.fa.fa-caret-down
+          = f.select :phone_type,
+            options_for_select(Applicant::PHONE_TYPES, @applicant.phone_type),
+            { include_blank: true },
+            class: "form__input--medium form__input--width form__select"
+      .form__field__column
+        %p
+          Select the region you are in
+        .form__select__field
+          %i.fa.fa-caret-down
+          = f.select :region,
+            options_for_select(Applicant::REGIONS, @applicant.region),
+            { include_blank: true },
+            class: "form__input--medium form__input--width form__select"
+    = f.button content_for(:form_button),
+      class: "form__button--medium form__button--width"
+
+= render "shared/forms/center"

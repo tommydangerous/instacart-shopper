@@ -4,7 +4,12 @@
       Apply today and join our amazing team
     %div
       .section__content__action
-        = link_to "Apply Now", new_applicant_path, class: "form__button--medium"
+        - if logged_in?
+          = link_to "View Application", edit_applicant_path(current_applicant),
+            class: "form__button--medium"
+        - else
+          = link_to "Apply Now", new_applicant_path,
+            class: "form__button--medium"
     .clear
 
 %section.start

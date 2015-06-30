@@ -12,7 +12,11 @@
             Become an Instacart Shopper and
             revolutionize the way people buy groceries
       .row.hero__background__content__actions
-        = link_to "Apply Now", new_applicant_path, class: "form__button"
+        - if logged_in?
+          = link_to "View Application", edit_applicant_path(current_applicant),
+            class: "form__button"
+        - else
+          = link_to "Apply Now", new_applicant_path, class: "form__button"
       .row
         = link_to "#", class: "arrow js-buton js-scroll-to",
           "data-scroll-to-key" => "features" do
