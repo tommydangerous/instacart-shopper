@@ -1,0 +1,42 @@
+.home-index {
+  section {
+    position: relative;
+    .section__pattern {
+      @include background-image-default;
+      background-image: asset-url("pattern.png");
+      height: 100%;
+      opacity: 0.2;
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+      .section__content {
+        visibility: hidden;
+      }
+    }
+    .section__content {
+      max-width: $max-width;
+      margin: 0 auto;
+      padding: $spacing * 5 $spacing;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      z-index: 1;
+      .section__content__action {
+        @include span-columns(12);
+        margin-top: $spacing;
+        a {
+          max-width: $spacing * 20;
+          width: 100%;
+        }
+      }
+      h2 {
+        span {
+          border-bottom: 1px solid $white;
+        }
+      }
+      p {
+        margin-top: $spacing;
+      }
+    }
+  }
+}

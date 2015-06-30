@@ -1,0 +1,13 @@
+= content_for :start_section_content do
+  .section__content
+    %h2
+      Apply today and join our amazing team
+    %div
+      .section__content__action
+        = link_to "Apply Now", "#", class: "form__button--medium"
+    .clear
+
+%section.start
+  .section__pattern
+    = yield :start_section_content
+  = yield :start_section_content

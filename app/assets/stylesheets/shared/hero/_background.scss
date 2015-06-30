@@ -57,7 +57,7 @@ $hero__background__content__image-height: $spacing * 5;
     .hero__background__content__actions {
       a {
         @include border-radius;
-        background-color: $blue;
+        // background-color: $blue;
         color: $white;
         display: block;
         font-size: $font-size-medium-1;
@@ -67,7 +67,7 @@ $hero__background__content__image-height: $spacing * 5;
         text-align: center;
         width: $spacing * 12.5;
         &:hover {
-          background-color: $blue-hover;
+          // background-color: $blue-hover;
           text-decoration: none;
         }
       }

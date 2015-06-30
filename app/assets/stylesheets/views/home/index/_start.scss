@@ -1,0 +1,16 @@
+.home-index {
+  section {
+    &.start {
+      background-color: $gray-dark-1;
+      border-bottom: 1px solid $gray-dark-3;
+      .section__content {
+        padding-bottom: $spacing * 10;
+        padding-top: $spacing * 7;
+        h2 {
+          color: $white;
+          margin-bottom: $spacing * 2;
+        }
+      }
+    }
+  }
+}
