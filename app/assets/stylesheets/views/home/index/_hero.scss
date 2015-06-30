@@ -1,0 +1,38 @@
+.home-index {
+  .hero {
+    .arrow {
+      @include screen-xs {
+        margin-top: $spacing * 4;
+      }
+      @include screen-sm {
+        margin-top: $spacing * 4;
+      }
+      @include screen-md-min {
+        margin-top: $spacing * 8;
+      }
+      display: block;
+      width: 100%;
+      .icon {
+        text-align: center;
+        i {
+          color: $white;
+          font-size: $font-size-large-1;
+        }
+      }
+    }
+  }
+  .hero__background__content {
+    @include screen-xs {
+      padding-bottom: $spacing;
+      padding-top: $spacing * 5;
+    }
+    @include screen-sm {
+      padding-bottom: $spacing;
+      padding-top: $spacing * 5;
+    }
+    @include screen-md-min {
+      padding-bottom: $spacing * 2;
+      padding-top: $spacing * 10;
+    }
+  }
+}

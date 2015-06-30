@@ -1,69 +1,94 @@
 @import "features";
-@import "how";
-@import "start";
+@import "hero";
 
 .home-index {
-  header {
-    // display: none;
-    // left: 0;
-    // position: fixed;
-    // top: 0;
-    // z-index: 10;
-  }
-  .hero {
-    .arrow {
-      @include screen-xs {
-        margin-top: $spacing * 4;
-      }
-      @include screen-sm {
-        margin-top: $spacing * 4;
-      }
-      @include screen-md-min {
-        margin-top: $spacing * 8;
-      }
-      display: block;
-      width: 100%;
-      .icon {
-        text-align: center;
-        i {
-          color: $white;
-          font-size: $font-size-large-1;
-        }
-      }
-    }
-  }
-  .hero__background__content {
-    @include screen-xs {
-      padding-bottom: $spacing;
-      padding-top: $spacing * 5;
-    }
-    @include screen-sm {
-      padding-bottom: $spacing;
-      padding-top: $spacing * 5;
-    }
-    @include screen-md-min {
-      padding-bottom: $spacing * 2;
-      padding-top: $spacing * 10;
-    }
-  }
   section {
-    .rows {
-      padding-bottom: $spacing * 5;
-      padding-top: $spacing * 5;
-      .row {
-        &.row-header {
-          text-align: center;
-          h2 {
-            font-weight: $font-weight-medium;
-          }
-          .underline {
-            border-bottom: 2px solid $blue;
-            margin: $spacing auto 0 auto;
-            max-width: $spacing * 15;
-            width: 100%;
-          }
+    position: relative;
+    &.about {
+      .section__content {
+        color: $gray-medium-1;
+      }
+    }
+    &.definition {
+      background-color: $blue;
+      .section__content {
+        color: $white;
+        // max-width: $max-width * 0.5;
+        p {
+          margin-top: $spacing * 1.5;
         }
+      }
+    }
+    &.features {
+      .steps {
+        margin-top: $spacing * 4;
+      }
+    }
+    &.start {
+      background-color: $gray-dark-1;
+      border-bottom: 1px solid $gray-dark-3;
+      .section__content {
+        padding-bottom: $spacing * 13;
+        padding-top: $spacing * 10;
+        h2 {
+          color: $white;
+          margin-bottom: $spacing * 2;
+        }
+      }
+    }
+    .section__pattern {
+      @include background-image-default;
+      background-image: image-url("pattern.png");
+      height: 100%;
+      opacity: 0.5;
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+      .section__content {
+        visibility: hidden;
+      }
+    }
+    .section__content {
+      max-width: $max-width;
+      margin: 0 auto;
+      padding: $spacing * 5 $spacing;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      z-index: 1;
+      .section__content__action {
+        margin-top: $spacing;
+        @include screen-xs {
+          @include span-columns(12);
+        }
+        @include screen-sm-min {
+          @include span-columns(6);
+        }
+        a {
+          @include screen-xs {
+            margin: 0 auto;
+          }
+          @include screen-sm-min {
+            max-width: 300px;
+            &.left {
+              float: right;
+            }
+            &.right {
+              float: left;
+            }
+          }
+          width: 100%;
+        }
+      }
+      h2 {
+        span {
+          border-bottom: 1px solid $white;
+        }
+      }
+      p {
+        margin-top: $spacing;
       }
     }
   }
 }
+

@@ -1,1 +1,2 @@
-= render "home/index/hero"
+- %w(hero features).each do |partial|
+  = render "home/index/#{partial}"

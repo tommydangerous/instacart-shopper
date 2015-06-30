@@ -1,56 +1,58 @@
-.home-index .features {
-  background-color: rgb(245, 245, 245);
-  .rows {
-    @include outer-container;
-    padding-left: $spacing;
-    padding-right: $spacing;
-  }
-  .row {
-    @include outer-container;
-    .column {
+$step__body__image-size: $spacing * 5;
+
+.home-index {
+  .steps {
+    width: 100%;
+    .step {
       @include screen-xs {
+        margin-top: $spacing * 4;
         @include span-columns(12);
       }
       @include screen-sm {
+        margin-top: $spacing * 4;
         @include span-columns(12);
       }
-      @include screen-md {
-        @include span-columns(12);
-      }
-      @include screen-lg {
+      @include screen-md-min {
         @include span-columns(4);
       }
-      margin-top: $spacing * 2;
-      &.image {
-        @include screen-lg {
-          margin-bottom: 0 !important;
-          margin-top: $spacing * 2 !important;
-        }
-        margin-bottom: $spacing;
-        margin-top: $spacing * 3;
-        text-align: center;
-      }
-      .feature {
-        &:first-child {
-          @include screen-lg {
-            margin-top: $spacing !important;
-          }
+      &:first-child {
+        @include screen-xs {
           margin-top: 0;
         }
-        margin-top: $spacing * 2;
+        @include screen-sm {
+          margin-top: 0;
+        }
+      }
+      .step__body {
         text-align: center;
-        i {
-          color: $blue;
-          font-size: $spacing * 3;
-          margin-bottom: $spacing;
+        padding: 0 $spacing * 0.75;
+        .step__body__image {
+          height: $step__body__image-size;
+          margin: 0 auto;
+          width: $step__body__image-size;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+          i {
+            color: $green-dark;
+            font-size: $step__body__image-size;
+          }
         }
-        h4 {
-          font-weight: $font-weight-medium;
+        .step__body__title, .step__body__text {
+          margin-top: $spacing;
         }
-        p {
-          color: $gray-medium-1;
+        .step__body__text {
+          p {
+            color: $gray-medium-1;
+            span {
+              color: $green-dark;
+              font-weight: $font-weight-bold;
+            }
+          }
         }
       }
     }
   }
+
 }
