@@ -30,14 +30,16 @@ class Applicant < ActiveRecord::Base
     rejected
   ).freeze
 
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :email
+  validates_presence_of :phone
+  validates_presence_of :phone_type
+  validates_presence_of :region
+  validates_presence_of :workflow_state
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :phone, presence: true, uniqueness: true
-  validates :phone_type, presence: true
-  validates :region, presence: true
-  validates :workflow_state, presence: true
+  validates_uniqueness_of :email, case_sensitive: false
+  validates_uniqueness_of :phone
 
   before_validation :initial_workflow_state, on: :create
 

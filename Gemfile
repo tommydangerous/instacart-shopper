@@ -21,6 +21,10 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 
+group :development, :test do
+  gem "rspec-rails", "~> 3.0"
+end
+
 group :development do
   gem "better_errors"
   gem "html2haml"
@@ -29,4 +33,8 @@ group :development do
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
+end
+
+group :test do
+  gem "shoulda", require: false
 end
