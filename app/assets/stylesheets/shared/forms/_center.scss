@@ -4,9 +4,18 @@ $form__header__image-size: $spacing * 3;
   padding: $spacing;
 }
 .form--center {
-  margin: $spacing * 5 auto ;
-  max-width: $spacing * 26;
-  padding: 0 $spacing * 2;
+  margin: $spacing * 2 auto 0 auto;
+  max-width: $spacing * 35;
+  @include screen-sm {
+    padding-left: $spacing;
+    padding-right: $spacing;
+  }
+  @include screen-md-min {
+    padding-left: $spacing * 2;
+    padding-right: $spacing * 2;
+  }
+  padding-bottom: 0;
+  padding-top: 0;
   .form__header {
     @include border-top-left-radius;
     @include border-top-right-radius;
@@ -41,5 +50,35 @@ $form__header__image-size: $spacing * 3;
       font-size: $font-size-small-2;
       text-align: center;
     }
+  }
+}
+
+.form__fields {
+  @include outer-container;
+  .form__field__column {
+    @include screen-md-min {
+      @include span-columns(6);
+    }
+    margin-bottom: $spacing;
+  }
+}
+.form__field {
+  margin-bottom: $spacing;
+  p {
+    margin-bottom: $spacing * 0.25;
+  }
+}
+.form__field--medium {
+  @extend .form__field;
+  margin-bottom: $spacing * 2;
+}
+.form__field__text {
+  @extend .form__field;
+  margin-bottom: $spacing * 0.5;
+}
+.form__field__text--medium {
+  @extend .form__field__text;
+  p {
+    font-size: $font-size-medium-1;
   }
 }

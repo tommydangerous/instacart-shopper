@@ -1,1 +1,45 @@
-- # your applicant landing page/form goes here!
+= content_for :page_title, "Apply Now"
+
+= content_for :form_content do
+  %h1
+    Become a Shopper Today
+  = form_for @applicant do |f|
+    .form__fields
+      .form__field__column
+        = f.text_field :first_name, autocomplete: "off",
+          class: "form__input--medium form__input--width",
+          placeholder: "First name"
+      .form__field__column
+        = f.text_field :last_name, autocomplete: "off",
+          class: "form__input--medium form__input--width",
+          placeholder: "Last name"
+    .form__field
+      = f.text_field :email, autocomplete: "off",
+        class: "form__input--medium form__input--width",
+        placeholder: "Email", type: "email"
+    .form__field
+      = f.text_field :phone, autocomplete: "off",
+        class: "form__input--medium form__input--width",
+        placeholder: "Phone number"
+    .form__field
+      %p
+        Choose your phone type
+      .form__select__field
+        %i.fa.fa-caret-down
+        = f.select :phone_type,
+          options_for_select(Applicant::PHONE_TYPES, "string"),
+          { include_blank: true },
+          class: "form__input--medium form__input--width form__select"
+    .form__field
+      %p
+        Select the region you are in
+      .form__select__field
+        %i.fa.fa-caret-down
+        = f.select :region,
+          options_for_select(Applicant::REGIONS, "string"),
+          { include_blank: true },
+          class: "form__input--medium form__input--width form__select"
+    = f.button "Sign up",
+      class: "form__button--medium form__button--width"
+
+= render "shared/forms/center"
