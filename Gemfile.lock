@@ -134,9 +134,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.0)
       sprockets-rails
-    rails-assets-d3 (3.4.13)
-    rails-assets-nvd3 (1.1.15.beta)
-      rails-assets-d3 (~> 3.4.1)
+    rails-assets-d3 (3.5.5)
+    rails-assets-nvd3 (1.8.1)
+      rails-assets-d3 (>= 3.4.4, < 4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.5)
@@ -239,7 +239,7 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 4.2.0)
-  rails-assets-nvd3
+  rails-assets-nvd3!
   rails_12factor
   rails_layout
   refills

@@ -1,10 +1,8 @@
 source "https://rubygems.org"
-source "https://rails-assets.org"
-
-# ruby "2.2.0"
 
 gem "rails", "4.2.0"
 
+gem "faker"
 gem "flutie"
 gem "jbuilder", "~> 2.0"
 gem "pg"
@@ -17,14 +15,13 @@ gem "handlebars_assets"
 gem "jquery-rails"
 gem "lodash-rails"
 gem "neat"
-gem "rails-assets-nvd3"
+gem "rails-assets-nvd3", source: "https://rails-assets.org"
 gem "refills"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
-  gem "faker"
   gem "rspec-rails", "~> 3.0"
 end
 

@@ -1,3 +1,22 @@
+Instacart Shoppers
+=================
+
+## Usage
+1. On the internet, visit https://instacart-shopper.herokuapp.com
+2. On your local server, visit http://localhost:3000
+3. To view the funnels, visit path `/funnels.json`
+
+## Local Setup
+1. `bundle install`
+2. `rake db:create`
+3. `rake db:migrate`
+4. `rake db:seed`
+5. `rails s`
+
+## Testing
+1. `rake db:test:prepare`
+2. `rspec`
+
 Shopper Challenge
 =================
 
@@ -34,7 +53,7 @@ To monitor how well applicants are being moved through the hiring process, we wa
 
 ### Requirements
 
-Write the `/funnels.json` endpoint such that it takes two parameters as options, `start_date` and `end_date`, and returns a JSON response analyzing the `workflow_state`s of the Applicants, grouped by the week they applied.   
+Write the `/funnels.json` endpoint such that it takes two parameters as options, `start_date` and `end_date`, and returns a JSON response analyzing the `workflow_state`s of the Applicants, grouped by the week they applied. 
 
 This should be structured like:
 
