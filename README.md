@@ -4,7 +4,7 @@ Instacart Shoppers
 ## Usage
 1. On the internet, visit https://instacart-shopper.herokuapp.com
 2. On your local server, visit http://localhost:3000
-3. To view the funnels, visit path `/funnels.json`
+3. To view the funnels, visit path `/funnels.json?start_date=2014-12-01&end_date=2014-12-31` after you seed the database
 
 ## Local Setup
 1. `bundle install`
