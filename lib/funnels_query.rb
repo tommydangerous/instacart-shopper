@@ -13,6 +13,10 @@ class FunnelsQuery
 
   private
 
+  def beginning_of_week
+    "DATE_TRUNC('week', created_at)::date"
+  end
+
   def case_statement
     when_statements = []
     date_ranges.each_with_index do |array, index|
@@ -36,13 +40,17 @@ class FunnelsQuery
     date.strftime "%Y-%m-%d"
   end
 
+  def end_of_week
+    "(#{beginning_of_week} + '6 days'::interval)::date"
+  end
+
   def sql
     %{
       SELECT
-        DATE(created_at, 'weekday 0', '-6 days') AS monday,
-        DATE(created_at, 'weekday 0') AS sunday,
+        #{beginning_of_week} AS monday,
+        #{end_of_week} AS sunday,
         workflow_state,
-        COUNT() as count,
+        COUNT(*) as count,
         #{case_statement}
 
       FROM Applicants
@@ -51,6 +59,8 @@ class FunnelsQuery
         AND created_at <= '#{date_string end_date}'
 
       GROUP BY
+        #{beginning_of_week},
+        #{end_of_week},
         workflow_state,
         #{case_statement}
       ;

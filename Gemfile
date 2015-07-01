@@ -1,11 +1,13 @@
 source "https://rubygems.org"
 source "https://rails-assets.org"
 
+# ruby "2.2.0"
+
 gem "rails", "4.2.0"
 
 gem "flutie"
 gem "jbuilder", "~> 2.0"
-gem "sqlite3"
+gem "pg"
 
 gem "bourbon"
 gem "coffee-rails", "~> 4.1.0"
@@ -34,6 +36,10 @@ group :development do
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
+end
+
+group :production do
+  gem "rails_12factor"
 end
 
 group :test do
